@@ -30,6 +30,22 @@ class App extends Component {
       .catch(err => console.log("Err:", err));
   };
 
+  handleEditSmurf = (id, smurf) => {
+    axios
+      .put(`http://localhost:3333/smurfs/${id}`, smurf)
+      .then(res => {
+        this.setState({ smurfs: res.data });
+      })
+      .catch(err => console.log(err));
+  };
+
+  handleDeleteSmurf = id => {
+    axios
+      .delete(`http://localhost:3333/smurfs/${id}`)
+      .then(res => this.setState({ smurfs: res.data }))
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <div className="App">
@@ -46,8 +62,8 @@ class App extends Component {
             <Smurfs
               {...props}
               smurfs={this.state.smurfs}
-              deleteSmurf={this.deleteSmurf}
-              editSmurf={this.editSmurf}
+              onDelete={this.handleDeleteSmurf}
+              onEdit={this.handleEditSmurf}
             />
           )}
         />

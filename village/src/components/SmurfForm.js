@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class SmurfForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      age: '',
-      height: ''
+      name: "",
+      age: "",
+      height: ""
     };
   }
 
@@ -14,7 +14,7 @@ class SmurfForm extends Component {
     event.preventDefault();
     this.props.onNewSmurf(this.state);
     this.props.history.push("/");
-  }
+  };
 
   handleInputChange = e => {
     this.setState({ [e.target.name]: e.target.value });
@@ -42,7 +42,9 @@ class SmurfForm extends Component {
             value={this.state.height}
             name="height"
           />
-          <button type="submit">Add to the village</button>
+          <button type="submit">
+            {this.props.edit ? "Submit changes" : "Add to the village"}
+          </button>
         </form>
       </div>
     );
