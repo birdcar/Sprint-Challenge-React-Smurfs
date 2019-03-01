@@ -129,7 +129,7 @@ Router.
 
 Add a Router to this application by using React Router.
 
-- [ ] You'll start by wrapping your `root` component in the `Router` component.
+- [x] You'll start by wrapping your `root` component in the `Router` component.
 - [ ] Declare your routes with `Route`.
 - [ ] Then make it so you can navigate to your routes using `Link`.
 - [ ] Create two `routes` in your `App` component, one at `'/'` for your
