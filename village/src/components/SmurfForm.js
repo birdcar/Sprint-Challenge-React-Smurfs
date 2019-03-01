@@ -13,6 +13,7 @@ class SmurfForm extends Component {
   addSmurf = event => {
     event.preventDefault();
     this.props.onNewSmurf(this.state);
+    this.props.history.push("/");
   }
 
   handleInputChange = e => {
