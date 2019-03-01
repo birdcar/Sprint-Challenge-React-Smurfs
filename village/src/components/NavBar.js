@@ -9,7 +9,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
+  NavLink
 } from "reactstrap";
 
 export default class NavBar extends Component {
@@ -27,26 +27,26 @@ export default class NavBar extends Component {
   }
   render() {
     return (
-      <div>
-        <Navbar color="dark" dark expand="md">
-          <NavbarBrand href="/">Lambda Smurfs</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavRoute exact to="/">
-                  <NavLink>Home</NavLink>
-                </NavRoute>
-              </NavItem>
-              <NavItem>
-                <NavRoute to="/smurf-form">
-                  <Button color="primary" className="ml-4 mr-2">Add a Smurf</Button>
-                </NavRoute>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </div>
+      <Navbar className="mb-4" color="dark" dark expand="md">
+        <NavbarBrand href="/">Lambda Smurfs</NavbarBrand>
+        <NavbarToggler onClick={this.toggle} />
+        <Collapse isOpen={this.state.isOpen} navbar>
+          <Nav className="ml-auto" navbar>
+            <NavItem>
+              <NavRoute exact to="/">
+                <NavLink>Home</NavLink>
+              </NavRoute>
+            </NavItem>
+            <NavItem>
+              <NavRoute to="/smurf-form">
+                <Button color="primary" className="ml-4 mr-2">
+                  Add a Smurf
+                </Button>
+              </NavRoute>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
     );
   }
 }
