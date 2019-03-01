@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Route } from "react-router-dom";
 import axios from "axios";
 
@@ -48,8 +48,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <Fragment>
         <NavBar />
+      <div className="container">
         <Route
           exact
           path="/"
@@ -69,6 +70,7 @@ class App extends Component {
           )}
         />
       </div>
+      </Fragment>
     );
   }
 }

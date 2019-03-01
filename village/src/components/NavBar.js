@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { NavLink as NavRoute } from "react-router-dom";
 
 import {
+  Button,
   Collapse,
   Navbar,
   NavbarToggler,
@@ -39,7 +40,7 @@ export default class NavBar extends Component {
               </NavItem>
               <NavItem>
                 <NavRoute to="/smurf-form">
-                  <NavLink>Add a Smurf</NavLink>
+                  <Button color="primary" className="ml-4 mr-2">Add a Smurf</Button>
                 </NavRoute>
               </NavItem>
             </Nav>
