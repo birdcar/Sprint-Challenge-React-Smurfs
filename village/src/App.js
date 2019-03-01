@@ -50,7 +50,7 @@ class App extends Component {
     return (
       <Fragment>
         <NavBar />
-      <div className="container">
+      <main className="container">
         <Route
           exact
           path="/"
@@ -69,7 +69,7 @@ class App extends Component {
             <SmurfForm {...props} onNewSmurf={this.handleNewSmurf} />
           )}
         />
-      </div>
+      </main>
       </Fragment>
     );
   }
