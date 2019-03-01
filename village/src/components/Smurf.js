@@ -1,7 +1,7 @@
 import React from "react";
 import {
   Card, CardText, CardBody,
-  CardTitle, CardSubtitle, Button
+  CardTitle, Button
 } from 'reactstrap';
 
 const Smurf = props => {
@@ -16,7 +16,7 @@ const Smurf = props => {
           <li>Age: {props.age} smurf years old</li>
         </ul>
       </CardText>
-      <button onClick={() => props.onDelete(props.id)}>Delete</button>
+      <Button onClick={() => props.onDelete(props.id)}>Delete</Button>
       </CardBody>
     </Card>
     </div>

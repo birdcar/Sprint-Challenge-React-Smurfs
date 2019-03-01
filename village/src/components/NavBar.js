@@ -8,8 +8,7 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
-  NavLink
+  NavItem
 } from "reactstrap";
 
 export default class NavBar extends Component {
@@ -34,7 +33,7 @@ export default class NavBar extends Component {
           <Nav className="ml-auto" navbar>
             <NavItem>
               <NavRoute exact to="/">
-                <NavLink>Home</NavLink>
+                Home
               </NavRoute>
             </NavItem>
             <NavItem>

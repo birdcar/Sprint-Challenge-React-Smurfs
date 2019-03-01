@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, FormGroup, Label, Button, Input, FormText } from "reactstrap";
+import { Form, FormGroup, Label, Button, Input } from "reactstrap";
 
 class SmurfForm extends Component {
   constructor(props) {
