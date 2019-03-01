@@ -1,25 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { Form, FormGroup, Label, Button, Input } from "reactstrap";
 
 class SmurfForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      age: '',
-      height: ''
+      name: "",
+      age: "",
+      height: ""
     };
   }
 
   addSmurf = event => {
     event.preventDefault();
-    // add code to create the smurf using the api
-
-    this.setState({
-      name: '',
-      age: '',
-      height: ''
-    });
-  }
+    this.props.onNewSmurf(this.state);
+    this.props.history.push("/");
+  };
 
   handleInputChange = e => {
     this.setState({ [e.target.name]: e.target.value });
@@ -27,28 +23,44 @@ class SmurfForm extends Component {
 
   render() {
     return (
-      <div className="SmurfForm">
-        <form onSubmit={this.addSmurf}>
-          <input
-            onChange={this.handleInputChange}
-            placeholder="name"
-            value={this.state.name}
-            name="name"
-          />
-          <input
-            onChange={this.handleInputChange}
-            placeholder="age"
-            value={this.state.age}
-            name="age"
-          />
-          <input
-            onChange={this.handleInputChange}
-            placeholder="height"
-            value={this.state.height}
-            name="height"
-          />
-          <button type="submit">Add to the village</button>
-        </form>
+      <div className="d-flex flex-column justify-content-center align-items-center">
+        <div className="col-sm-6">
+          <Form onSubmit={this.addSmurf}>
+            <FormGroup>
+              <Label for="name">Name</Label>
+              <Input
+                onChange={this.handleInputChange}
+                placeholder="Smurf Name"
+                value={this.state.name}
+                name="name"
+                id="name"
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label for="age">Age</Label>
+              <Input
+                onChange={this.handleInputChange}
+                placeholder="Smurf Age"
+                value={this.state.age}
+                name="age"
+                id="age"
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label for="height">Height</Label>
+              <Input
+                onChange={this.handleInputChange}
+                placeholder="Smurf Height"
+                value={this.state.height}
+                name="height"
+                id="age"
+              />
+            </FormGroup>
+            <Button type="submit" color="primary">
+              Add to the village
+            </Button>
+          </Form>
+        </div>
       </div>
     );
   }
